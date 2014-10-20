@@ -7,7 +7,7 @@
 	<meta charset='utf-8'>
 
 	<link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
-	<link rel='stylesheet' href='/css/style.css' type='text/css'>
+	<link rel='stylesheet' href='style/style.css' type='text/css'>
 
 	@yield('head')
 
@@ -44,22 +44,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img src="assets/toolbox.png" alt="toolbox">
-					<h2>Welcome to Mike's Developer ToolKit!</h1>
-					<p>I created some simple tools that will assist</p>
-					<p>your web development tasks by generating sample</p>
-					<p>placeholder text, sample users, and strong passwords.</p>
-					<p>I hope you find these tools helpful!</p>
-				</div><!-- /col-lg-8 -->
-			</div><!-- /row -->
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					@yield('lorem')
-				</div><!-- /col-lg-8 -->
-			</div><!-- /row -->
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					@yield('users')
+					@yield('content')
 				</div><!-- /col-lg-8 -->
 			</div><!-- /row -->
 	    </div> <!-- /container -->
@@ -83,9 +68,9 @@
 				<div class="col-lg-4">
 					<h4>My Links</h4>
 					<p>
-						<a href="#">GitHub</a><br/>
-						<a href="#">Twitter</a><br/>
-						<a href="#">Facebook</a>
+						<a href="https://github.com/mhaw">GitHub</a><br/>
+						<a href="https://twitter.com/guyfromva">Twitter</a><br/>
+						<a href="http://www.linkedin.com/in/mikehaw/">LinkedIn</a>
 					</p>
 				</div><!-- /col-lg-4 -->
 				

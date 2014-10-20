@@ -7,11 +7,15 @@
 @section('head')
 
 @stop
-@section('intro')
-	Welcome to my developer toolkit. Here you will find tools to assist with generating placeholder text, creating sample user profiles, and generating secure passwords.
-@stop
-	
-@section('lorem')
+
+@section('content')
+	<img src="assets/toolbox.png" alt="toolbox">
+	<h2>Welcome to Mike's Developer ToolKit!</h1>
+	<p>I created some simple tools that will assist
+	your web development tasks by generating sample
+	placeholder text, sample users, and strong passwords.</p>
+	<p>I hope you find these tools helpful!</p>
+
 	{{ Form::open(array('url' => '/lorem', 'method' => 'GET')) }}
 
 		{{ Form::label('number_para','Number of Paragraphs') }}
@@ -28,16 +32,13 @@
 		{{ Form::label('length','Short') }}
 		{{ Form::radio('length', 'Short'); }}
 		<br>
-		{{ Form::label('meatify','Meatify') }}
-		{{ Form::checkbox('meatify', 'Yes'); }}
-		<br>
 		{{ Form::submit('Generate'); }}
+		
 
 	{{ Form::close() }}
 
-@stop
-
-@section('users')
+	<br>
+	<br>
 
 	{{ Form::open(array('url' => '/users', 'method' => 'GET')) }}
 
@@ -57,10 +58,6 @@
 		{{ Form::checkbox('profile', 'Yes'); }}
 		<br>
 		{{ Form::submit('Generate'); }}
+		<br>
 
 @stop
-
-@section('pass')
-
-@stop
-
