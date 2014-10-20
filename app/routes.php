@@ -20,10 +20,11 @@ Route::get('/', function()
 //Lorem App
 Route::get('/lorem', function()
 {
+	$number_para = $_GET["number_para"];
 	$para_length = $_GET["length"];
 	$generator = new Badcow\LoremIpsum\Generator();
 
-	if($para_length > 0 && $para_length > 25) {
+	if($number_para > 0 && $number_para < 25) {
 		if($para_length == "Long")
 		{
 			$generator->setParagraphMean(5.8);
@@ -40,11 +41,12 @@ Route::get('/lorem', function()
 			$generator->setParagraphStDev(0.8);
 		}
 
-		$paragraphs = $generator->getParagraphs($_GET["number_para"]);
-		echo implode('<p>', $paragraphs);
+		$paragraphs = $generator->getParagraphs($number_para);
+
 	}
-	else echo "Please enter a number between 1 and 25.";
+	else $paragraphs = "Please enter a number between 1 and 25.";
 	
+	echo Pre::r($paragraphs);
 
 });
 
@@ -95,7 +97,6 @@ Route::get('/users', function()
 			{
 				$loc = rtrim($loc_arr[rand(0, count($loc_arr)-1)]);
 				$data_arr["Location"][] = $loc;
-				
 			}
 
 			if(isset($_GET["profile"]))
@@ -103,7 +104,6 @@ Route::get('/users', function()
 					$prof_generator = new Badcow\LoremIpsum\Generator();
 					$prof_text = implode($prof_generator->getSentences(rand(1, 3)));
 					$data_arr["Profile"][] = $prof_text;
-
 			}
 
 		}
