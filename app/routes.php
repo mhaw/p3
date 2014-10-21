@@ -17,11 +17,21 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-//Lorem App
 Route::get('/lorem', function()
 {
-	$number_para = $_GET["number_para"];
-	$para_length = $_GET["length"];
+	return View::make('lorem')->with('para_final');
+});
+
+Route::get('/users', function()
+{
+	return View::make('users');
+});
+
+//Lorem App
+Route::post('/lorem', function()
+{
+	$number_para = $_POST["number_para"];
+	$para_length = $_POST["length"];
 	$generator = new Badcow\LoremIpsum\Generator();
 
 	if($number_para > 0 && $number_para < 25) {
@@ -42,17 +52,18 @@ Route::get('/lorem', function()
 		}
 
 		$paragraphs = $generator->getParagraphs($number_para);
-
 	}
 	else $paragraphs = "Please enter a number between 1 and 25.";
 	
-	echo Pre::r($paragraphs);
+	$para_final = implode('<br><br>', $paragraphs);
+
+	return View::make('lorem')->with('para_final', $para_final);
 
 });
 
 
 //User App
-Route::get('/users', function()
+Route::post('/users', function()
 {
 	$num = $_GET["number_users"];
 
@@ -111,17 +122,8 @@ Route::get('/users', function()
 	else $data_arr[] = "Please enter a number between 1 and 100.";
 
 	//for testing
-	echo Pre::r($data_arr);
-
+	//echo Pre::r($data_arr);
+	return View::make('users')->with('users', $data_arr);
 });
 
-//Display Lorem Results
-Route::post('/lorem', function() {
-
-});
-
-// Display User Results
-Route::post('/user', function() {
-
-});
 

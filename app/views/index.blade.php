@@ -9,14 +9,14 @@
 @stop
 
 @section('content')
-	<img src="assets/toolbox.png" alt="toolbox">
+	<img class='logo' img src="assets/toolbox.png" alt="toolbox">
 	<h2>Welcome to Mike's Developer ToolKit!</h1>
 	<p>I created some simple tools that will assist
 	your web development tasks by generating sample
 	placeholder text, sample users, and strong passwords.</p>
 	<p>I hope you find these tools helpful!</p>
 
-	{{ Form::open(array('url' => '/lorem', 'method' => 'GET')) }}
+	{{ Form::open(array('url' => '/lorem', 'method' => 'POST')) }}
 
 		{{ Form::label('number_para','Number of Paragraphs') }}
 		{{ Form::text('number_para'); }}
