@@ -40,7 +40,7 @@
 	<br>
 	<br>
 
-	{{ Form::open(array('url' => '/users', 'method' => 'GET')) }}
+	{{ Form::open(array('url' => '/users', 'method' => 'POST')) }}
 
 		{{ Form::label('number_users','Number of Sample Users') }}
 		{{ Form::text('number_users'); }}

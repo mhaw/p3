@@ -13,8 +13,32 @@
 	<h2>Sample Users</h1>
 
 		<!-- Insert generated user information here -->
+		<p class="bg-success">
 
-	{{ Form::open(array('url' => '/users', 'method' => 'GET')) }}
+		@foreach($users_final as $sampleuser => $user)
+			{{ $user['Name']}}
+			<br>
+			@if (isset($user['Birthday']))
+				{{$user['Birthday']}}
+				<br>
+			@endif
+			@if (isset($user['Email']))
+				{{$user['Email']}}
+				<br>
+			@endif
+			@if (isset($user['Location']))
+				{{$user['Location']}}
+				<br>
+			@endif
+			@if (isset($user['Profile']))
+				{{$user['Profile']}}
+				<br>
+			@endif
+			<br>	
+		@endforeach
+		</p>
+
+	{{ Form::open(array('url' => '/users', 'method' => 'POST')) }}
 
 		{{ Form::label('number_users','Number of Sample Users') }}
 		{{ Form::text('number_users'); }}
