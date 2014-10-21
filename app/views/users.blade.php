@@ -12,9 +12,20 @@
 	<img class='logo' img src="assets/user.png" alt="user">
 	<h2>Sample Users</h1>
 
+		
+
 		<!-- Insert generated user information here -->
 		<p class="bg-success">
 
+		@if (isset($errors))
+		
+			@foreach ($errors->all() as $error)
+				{{ $error }}		
+			@endforeach
+		
+		@endif
+
+		@if(isset($users_final))
 		@foreach($users_final as $sampleuser => $user)
 			{{ $user['Name']}}
 			<br>
@@ -36,6 +47,8 @@
 			@endif
 			<br>	
 		@endforeach
+		@endif
+
 		</p>
 
 	{{ Form::open(array('url' => '/users', 'method' => 'POST')) }}
