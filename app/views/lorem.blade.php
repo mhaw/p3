@@ -15,7 +15,15 @@
 		<!-- Insert generated lorem text here -->
 	<p class="bg-success">
 
+		@if (isset($errors))
+			@foreach ($errors->all() as $error)
+				{{ $error }}		
+			@endforeach	
+		@endif
+
+		@if(isset($para_final))
 		{{ $para_final }}
+		@endif
 	</p>
 
 	{{ Form::open(array('url' => '/lorem', 'method' => 'POST')) }}

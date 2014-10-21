@@ -30,6 +30,18 @@ Route::get('/users', function()
 //Lorem App
 Route::post('/lorem', function()
 {
+	$rules = array('number_para' => array('required', 'min:1', 'max:20', 'numeric'));
+
+	$validator = Validator::make(Input::all(), $rules);
+
+	if ($validator->fails()) {
+		$messages = $validator->messages();
+
+		return Redirect::to('/lorem')->withErrors($validator);
+
+	}
+	else {
+
 	$number_para = $_POST["number_para"];
 	$para_length = $_POST["length"];
 	$generator = new Badcow\LoremIpsum\Generator();
@@ -59,6 +71,7 @@ Route::post('/lorem', function()
 
 	return View::make('lorem')->with('para_final', $para_final);
 
+	}
 });
 
 
