@@ -10,7 +10,7 @@
 
 @section('content')
 	<img class='logo' img src="assets/user.png" alt="user">
-	<h2>Sample Users</h1>
+	<h2>Sample Users</h2>
 
 		
 
@@ -53,7 +53,7 @@
 
 	{{ Form::open(array('url' => '/users', 'method' => 'POST')) }}
 
-		{{ Form::label('number_users','Number of Sample Users') }}
+		{{ Form::label('number_users','Number of Users') }}
 		{{ Form::text('number_users'); }}
 		<br>
 		{{ Form::label('bday','Birthday') }}
@@ -70,5 +70,5 @@
 		<br>
 		{{ Form::submit('Generate'); }}
 		<br>
-
+	{{ Form::close() }}
 @stop

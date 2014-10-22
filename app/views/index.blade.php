@@ -10,7 +10,7 @@
 
 @section('content')
 	<img class='logo' img src="assets/toolbox.png" alt="toolbox">
-	<h2>Welcome to Mike's Developer ToolKit!</h1>
+	<h2>Welcome to Mike's Developer ToolKit!</h2>
 	<p>I created some simple tools that will assist
 	your web development tasks by generating sample
 	placeholder text, sample users, and strong passwords.</p>
@@ -34,7 +34,6 @@
 		<br>
 		{{ Form::submit('Generate'); }}
 		
-
 	{{ Form::close() }}
 
 	<br>
@@ -59,5 +58,31 @@
 		<br>
 		{{ Form::submit('Generate'); }}
 		<br>
+
+	{{ Form::close() }}
+
+	<br>
+	<br>
+
+	{{ Form::open(array('url' => '/password', 'method' => 'POST')) }}
+
+		{{ Form::label('number_words','Number of Words') }}
+		{{ Form::text('number_words'); }}
+		<br>
+		{{ Form::label('symbol','Include a Symbol') }}
+		{{ Form::checkbox('symbol', 'Yes'); }}
+		<br>
+		{{ Form::label('number','Include a Number') }}
+		{{ Form::checkbox('number', 'Yes'); }}
+		<br>
+		{{ Form::label('upper','All Uppercase') }}
+		{{ Form::checkbox('upper', 'Yes'); }}
+		<br>
+		{{ Form::select('seperator', array('S' => 'Space', 'H' => 'Hypen', 'U' => 'Underscore'));}}
+		<br>
+		{{ Form::submit('Generate'); }}
+		<br>
+
+	{{ Form::close() }}
 
 @stop

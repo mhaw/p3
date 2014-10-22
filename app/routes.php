@@ -27,6 +27,11 @@ Route::get('/users', function()
 	return View::make('users')->with('users_final');
 });
 
+Route::get('/password', function()
+{
+	return View::make('password')->with('passwordfinal');
+});
+
 //Lorem App
 Route::post('/lorem', function()
 {
@@ -149,4 +154,71 @@ Route::post('/users', function()
 	}
 });
 
+Route::post('/password', function()
+{
+	
+	$rules = array('number_words' => array('required', 'min:1', 'max:8', 'numeric'));
+
+	$validator = Validator::make(Input::all(), $rules);
+
+	if ($validator->fails()) {
+		$messages = $validator->messages();
+
+		return Redirect::to('/password')->withErrors($validator);
+
+	}
+	else {
+
+	$numwords = $_POST["number_words"];
+
+	$words = file(app_path().'/database/words.txt');
+
+	$sym = '';
+	$num = '';
+
+	//logic to customize separator type
+	if(isset($_POST["seperator"])) {
+		$septype = $_POST["seperator"];
+
+		if($septype == 'H'){
+			$separator = '-';
+		}
+		if($septype == 'U') {
+			$separator = '_';
+		}
+		if($septype == 'S') {
+			$separator = ' ';
+		}
+	}
+
+	//logic to pick and insert random symbol
+	if(isset($_POST["symbol"])) {
+		$available_symbols = array('!', '@', '#', '$', '%', '&');
+		shuffle($available_symbols);
+		$sym = $available_symbols[0];
+	}
+	else $sym = '';
+
+	//insert a number from
+	if(isset($_POST["number"])) {
+		$num = rand(0,9);
+	}
+	else $num = '';
+
+	for ($i=0; $i < $numwords; $i++) {
+		$rand_num = rand(0, count($words)-1);
+		$pass_words[$i] = rtrim($words[$rand_num]);
+	}
+
+	$seperated_words = implode($separator, $pass_words);
+
+	if(isset($_POST["upper"])) {
+		$seperated_words = strtoupper($seperated_words);
+	}
+
+	$fpass = $seperated_words.$num.$sym;
+
+	return View::make('password')->with('passwordfinal', $fpass);
+}
+});
 

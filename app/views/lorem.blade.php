@@ -10,7 +10,7 @@
 
 @section('content')
 	<img class='logo' img src="assets/lorem.png" alt="text">
-	<h2>Sample Text</h1>
+	<h2>Sample Text</h2>
 
 		<!-- Insert generated lorem text here -->
 	<p class="bg-success">
@@ -44,7 +44,6 @@
 		<br>
 		{{ Form::submit('Generate'); }}
 		
-
 	{{ Form::close() }}
 
 @stop
