@@ -31,7 +31,7 @@
 		{{ Form::label('number_para','Number of Paragraphs') }}
 		{{ Form::text('number_para'); }}
 		<br>
-		{{ Form::label('length','Paragraph Length') }}
+		{{ Form::label('length','Paragraph Length', ['for' => 'length']) }}
 		<br>
 		{{ Form::label('length','Long', ['for' => '1']) }}
 		{{ Form::radio('length', 'Long', false, ['id' => '1']); }}
