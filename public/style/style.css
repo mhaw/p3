@@ -37,9 +37,16 @@ p {
     text-align: center;
 }
 
-.bg-success {
+.bg-danger {
 	text-align: justify;
+	padding: 8px 8px;
+	color: black;
+}
 
+.bg-danger.centered {
+	text-align: center;
+	padding: 8px 8px;
+	color: black;
 }
 
 

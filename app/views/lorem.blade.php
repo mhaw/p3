@@ -13,7 +13,7 @@
 	<h2>Sample Text</h2>
 
 		<!-- Insert generated lorem text here -->
-	<p class="bg-success">
+	<p class="bg-danger">
 
 		@if (isset($errors))
 			@foreach ($errors->all() as $error)

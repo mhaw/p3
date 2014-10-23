@@ -48,7 +48,12 @@ Route::post('/lorem', function()
 	else {
 
 	$number_para = $_POST["number_para"];
-	$para_length = $_POST["length"];
+
+	if(isset($_POST["length"])) {
+		$para_length = $_POST["length"];
+	}
+	else $para_length = 'Medium';
+
 	$generator = new Badcow\LoremIpsum\Generator();
 
 	if($number_para > 0 && $number_para < 25) {

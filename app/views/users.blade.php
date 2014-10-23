@@ -15,7 +15,7 @@
 		
 
 		<!-- Insert generated user information here -->
-		<p class="bg-success">
+		<p class="bg-danger">
 
 		@if (isset($errors))
 		
