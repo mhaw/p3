@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<img class='logo' img src="assets/mono_password.png" alt="password">
+	<img class='logo' src="assets/mono_password.png" alt="password">
 	<h2>Secure Password</h2>
 
 		

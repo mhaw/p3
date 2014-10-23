@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<img class='logo' img src="assets/user.png" alt="user">
+	<img class='logo' src="assets/user.png" alt="user">
 	<h2>Sample Users</h2>
 
 		

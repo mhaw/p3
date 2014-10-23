@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<img class='logo' img src="assets/toolbox.png" alt="toolbox">
+	<img class='logo' src="assets/toolbox.png" alt="toolbox">
 	<h2>Welcome to Mike's Developer ToolKit!</h2>
 	<p>I have created some simple tools that will assist
 	your web development tasks by generating sample
@@ -27,13 +27,13 @@
 		{{ Form::label('length','Paragraph Length') }}
 		<br>
 		{{ Form::label('length','Long') }}
-		{{ Form::radio('length', 'Long'); }}
+		{{ Form::radio('length', 'Long', false, ['id' => '1']); }}
 		<br>
 		{{ Form::label('length','Medium') }}
-		{{ Form::radio('length', 'Medium'); }}
+		{{ Form::radio('length', 'Medium', true, ['id' => '2']); }}
 		<br>
 		{{ Form::label('length','Short') }}
-		{{ Form::radio('length', 'Short'); }}
+		{{ Form::radio('length', 'Short', false, ['id' => '3']); }}
 		<br>
 		{{ Form::submit('Generate'); }}
 		

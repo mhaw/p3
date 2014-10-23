@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<img class='logo' img src="assets/lorem.png" alt="text">
+	<img class='logo' src="assets/lorem.png" alt="text">
 	<h2>Sample Text</h2>
 
 		<!-- Insert generated lorem text here -->
@@ -34,13 +34,13 @@
 		{{ Form::label('length','Paragraph Length') }}
 		<br>
 		{{ Form::label('length','Long') }}
-		{{ Form::radio('length', 'Long'); }}
+		{{ Form::radio('length', 'Long', false, ['id' => '1']); }}
 		<br>
 		{{ Form::label('length','Medium') }}
-		{{ Form::radio('length', 'Medium'); }}
+		{{ Form::radio('length', 'Medium', true, ['id' => '2']); }}
 		<br>
 		{{ Form::label('length','Short') }}
-		{{ Form::radio('length', 'Short'); }}
+		{{ Form::radio('length', 'Short', false, ['id' => '3']); }}
 		<br>
 		{{ Form::submit('Generate'); }}
 		
