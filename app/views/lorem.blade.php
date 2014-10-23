@@ -31,15 +31,15 @@
 		{{ Form::label('number_para','Number of Paragraphs') }}
 		{{ Form::text('number_para'); }}
 		<br>
-		{{ Form::label('length','Paragraph Length') }}
+		{{ Form::label('length','Paragraph Length', ['id' => 'length']) }}
 		<br>
-		{{ Form::label('length','Long') }}
+		{{ Form::label('length','Long', ['id' => '1']) }}
 		{{ Form::radio('length', 'Long', false, ['id' => '1']); }}
 		<br>
-		{{ Form::label('length','Medium') }}
+		{{ Form::label('length','Medium', ['id' => '2']) }}
 		{{ Form::radio('length', 'Medium', true, ['id' => '2']); }}
 		<br>
-		{{ Form::label('length','Short') }}
+		{{ Form::label('length','Short', ['id' => '3']) }}
 		{{ Form::radio('length', 'Short', false, ['id' => '3']); }}
 		<br>
 		{{ Form::submit('Generate'); }}
