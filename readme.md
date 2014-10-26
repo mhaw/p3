@@ -7,7 +7,7 @@ Live URL <http://p3.mikehaw.me>
 Web application providing simple web development tools, including: lorem ipsum generation, sample user creation, and a strong password generator. 
 
 ## Demo
-To be posted by 10/26/2014
+Demo <http://screencast.com/t/qsknhwOqq>
 
 ## Details
 #####Key Features
